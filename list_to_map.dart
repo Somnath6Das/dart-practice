@@ -15,9 +15,25 @@ void main() {
   print(bikesOne);
 
   final bikeLatters = bikes.where((bike) => bike.name.length <= 5);
-  // bike name latters shoters the or equals to 5 
+  // bike name latters shoters the or equals to 5
   String value = bikeLatters.map((e) => e.name).toString();
   print(value);
+
+  final bikeStartLetter = bikes.where((bike) => bike.name.startsWith('Y'));
+  String value1 = bikeStartLetter.map((e) => e.name).toString();
+  print(value1);
+
+  final bikeFirst2 = bikes.take(2);
+  String value2 = bikeFirst2.map((e) => e.name).toString();
+  print(value2);
+
+  final bikeskip2 = bikes.skip(2);
+  String value3 = bikeskip2.map((e) => e.name).toString();
+  print(value3);
+
+  final bikeKmPerHr =
+      bikes.expand((element) => [element.name,element.kmPerHr, element.kmPerHr + 100]).toString();
+  print(bikeKmPerHr);
 }
 
 class Bike {
